@@ -8,9 +8,9 @@
 
   home.packages = with pkgs; [
     ast-grep
+    dua
     duckdb
     llvm
-    ncdu
     rust-bin.stable.latest.default
   ];
 
@@ -23,6 +23,10 @@
     direnv = {
       enable = true;
       nix-direnv.enable = true;
+    };
+    delta = {
+      enable = true;
+      enableGitIntegration = true;
     };
     eza.enable = true;
     fd.enable = true;
