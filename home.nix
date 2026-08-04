@@ -27,8 +27,10 @@
     eza.enable = true;
     git = {
       enable = true;
-      userName = "Matthew Deville";
-      userEmail = "matthew@stockly.ai";
+      settings.user = {
+        name = "Matthew Deville";
+        email = "matthew@stockly.ai";
+      };
     };
     home-manager.enable = true;
     parallel.enable = true;
