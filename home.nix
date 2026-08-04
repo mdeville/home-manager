@@ -38,6 +38,7 @@
     starship.enable = true;
     ripgrep.enable = true;
     uv.enable = true;
+    zellij.enable = true;
     zsh = {
       enable = true;
       antidote = {
