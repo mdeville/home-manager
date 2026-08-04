@@ -8,14 +8,9 @@
 
   home.packages = with pkgs; [
     ast-grep
-    bat
-    btop
     duckdb
-    eza
     llvm
     ncdu
-    parallel
-    ripgrep
     rust-bin.stable.latest.default
   ];
 
@@ -24,13 +19,21 @@
       enable = true;
       enableZshIntegration = true;
     };
+    bat.enable = true;
+    btop.enable = true;
+    eza = {
+      enable = true;
+      enableZshIntegration = true;
+    };
     home-manager.enable = true;
+    parallel.enable = true;
     direnv = {
       enable = true;
       enableZshIntegration = true;
       nix-direnv.enable = true;
     };
     starship.enable = true;
+    ripgrep.enable = true;
     uv.enable = true;
     zsh = {
       enable = true;
