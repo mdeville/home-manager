@@ -45,9 +45,29 @@
         ];
 
         perSystem =
-          { pkgs, ... }:
+          { system, config, ... }:
+          let
+            pkgs = import inputs.nixpkgs {
+              inherit system;
+              config.allowUnfreePredicate = p: builtins.elem (lib.getName p) [ "1password-cli" ];
+            };
+          in
           {
             packages.default = (mkHome pkgs).activationPackage;
+
+            packages.bootstrap-ssh = pkgs.writeShellApplication {
+              name = "bootstrap-ssh";
+              runtimeInputs = [
+                pkgs._1password-cli
+                pkgs.jq
+              ];
+              text = builtins.readFile ./scripts/bootstrap-ssh.sh;
+            };
+
+            apps.bootstrap-ssh = {
+              type = "app";
+              program = "${config.packages.bootstrap-ssh}/bin/bootstrap-ssh";
+            };
 
             treefmt = {
               projectRootFile = "flake.nix";
