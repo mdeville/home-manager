@@ -14,7 +14,6 @@
     hyperfine
     xh
     llvm
-    rust-bin.stable.latest.default
     sd
   ];
 
@@ -50,7 +49,6 @@
     parallel.enable = true;
     starship.enable = true;
     ripgrep.enable = true;
-    uv.enable = true;
     zellij.enable = true;
     zoxide.enable = true;
     zsh = {
