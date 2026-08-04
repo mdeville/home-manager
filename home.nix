@@ -10,8 +10,12 @@
     ast-grep
     dua
     duckdb
+    jaq
+    hyperfine
+    xh
     llvm
     rust-bin.stable.latest.default
+    sd
   ];
 
   home.shell.enableZshIntegration = true;
@@ -30,6 +34,11 @@
     };
     eza.enable = true;
     fd.enable = true;
+    fzf = {
+      enable = true;
+      historyWidget.command = "";
+    };
+    gh.enable = true;
     git = {
       enable = true;
       settings.user = {
@@ -43,6 +52,7 @@
     ripgrep.enable = true;
     uv.enable = true;
     zellij.enable = true;
+    zoxide.enable = true;
     zsh = {
       enable = true;
       antidote = {
