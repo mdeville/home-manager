@@ -25,6 +25,7 @@
       nix-direnv.enable = true;
     };
     eza.enable = true;
+    fd.enable = true;
     git = {
       enable = true;
       settings.user = {
