@@ -12,12 +12,21 @@
       url = "github:oxalica/rust-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    treefmt-nix = {
+      url = "github:numtide/treefmt-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
     inputs@{ flake-parts, home-manager, ... }:
     flake-parts.lib.mkFlake { inherit inputs; } (
-      { config, lib, withSystem, ... }:
+      {
+        config,
+        lib,
+        withSystem,
+        ...
+      }:
       let
         mkHome =
           pkgs:
@@ -29,6 +38,7 @@
       {
         imports = [
           inputs.home-manager.flakeModules.home-manager
+          inputs.treefmt-nix.flakeModule
         ];
 
         systems = [
@@ -49,6 +59,11 @@
           {
             _module.args.pkgs = pkgs;
             packages.default = (mkHome pkgs).activationPackage;
+
+            treefmt = {
+              projectRootFile = "flake.nix";
+              programs.nixfmt.enable = true;
+            };
           };
 
         flake.homeConfigurations = lib.listToAttrs (
