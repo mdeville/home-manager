@@ -20,13 +20,18 @@
     atuin.enable = true;
     bat.enable = true;
     btop.enable = true;
-    eza.enable = true;
-    home-manager.enable = true;
-    parallel.enable = true;
     direnv = {
       enable = true;
       nix-direnv.enable = true;
     };
+    eza.enable = true;
+    git = {
+      enable = true;
+      userName = "Matthew Deville";
+      userEmail = "matthew@stockly.ai";
+    };
+    home-manager.enable = true;
+    parallel.enable = true;
     starship.enable = true;
     ripgrep.enable = true;
     uv.enable = true;
