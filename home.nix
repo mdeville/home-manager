@@ -14,22 +14,17 @@
     rust-bin.stable.latest.default
   ];
 
+  home.shell.enableZshIntegration = true;
+
   programs = {
-    atuin = {
-      enable = true;
-      enableZshIntegration = true;
-    };
+    atuin.enable = true;
     bat.enable = true;
     btop.enable = true;
-    eza = {
-      enable = true;
-      enableZshIntegration = true;
-    };
+    eza.enable = true;
     home-manager.enable = true;
     parallel.enable = true;
     direnv = {
       enable = true;
-      enableZshIntegration = true;
       nix-direnv.enable = true;
     };
     starship.enable = true;
