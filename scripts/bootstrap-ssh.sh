@@ -24,4 +24,4 @@ else
   echo "Wrote $KEY_PATH"
 fi
 
-echo "Done. Run 'home-manager switch --flake .' when ready."
+echo "Done. Run 'nix run' when ready."
