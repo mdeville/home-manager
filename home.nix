@@ -8,13 +8,15 @@
 
   home.packages = with pkgs; [
     ast-grep
+    comma
     dua
     duckdb
     jaq
     hyperfine
-    xh
     llvm
+    nh
     sd
+    xh
   ];
 
   home.shell.enableZshIntegration = true;
@@ -23,6 +25,7 @@
     atuin.enable = true;
     bat.enable = true;
     btop.enable = true;
+    command-not-found.enable = true;
     direnv = {
       enable = true;
       nix-direnv.enable = true;
@@ -46,6 +49,7 @@
       };
     };
     home-manager.enable = true;
+    nh.enable = true;
     parallel.enable = true;
     starship.enable = true;
     ripgrep.enable = true;

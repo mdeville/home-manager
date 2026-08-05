@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# Edit these to match the item in your 1Password vault.
 OP_VAULT="Employee"
 OP_ITEM="nix-ssh-key"
 
