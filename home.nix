@@ -25,7 +25,6 @@
     atuin.enable = true;
     bat.enable = true;
     btop.enable = true;
-    command-not-found.enable = true;
     direnv = {
       enable = true;
       nix-direnv.enable = true;
@@ -49,10 +48,12 @@
       };
     };
     home-manager.enable = true;
+    nix-index.enable = true;
     nh.enable = true;
     parallel.enable = true;
     starship.enable = true;
     ripgrep.enable = true;
+    yazi.enable = true;
     zellij.enable = true;
     zoxide.enable = true;
     zsh = {
