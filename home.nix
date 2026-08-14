@@ -9,7 +9,6 @@
   home.packages = with pkgs; [
     _1password-cli
     ast-grep
-    comma
     dua
     duckdb
     jq
@@ -50,6 +49,7 @@
     home-manager.enable = true;
     lazygit.enable = true;
     nix-index.enable = true;
+    nix-index-database.comma.enable = true;
     nh.enable = true;
     opencode.enable = true;
     parallel.enable = true;
