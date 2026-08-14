@@ -1,24 +1,23 @@
 { pkgs, ... }:
 
 {
-  home.username = "matthew_deville";
-  home.homeDirectory = "/home/matthew_deville";
-
-  home.stateVersion = "26.11";
-
-  home.packages = with pkgs; [
-    _1password-cli
-    ast-grep
-    dua
-    duckdb
-    jq
-    hyperfine
-    ouch
-    sd
-    xh
-  ];
-
-  home.shell.enableZshIntegration = true;
+  home = {
+    username = "matthew_deville";
+    homeDirectory = "/home/matthew_deville";
+    stateVersion = "26.11";
+    packages = with pkgs; [
+      _1password-cli
+      ast-grep
+      dua
+      duckdb
+      hyperfine
+      jq
+      ouch
+      rsync
+      yq-go
+    ];
+    shell.enableZshIntegration = true;
+  };
 
   programs = {
     atuin.enable = true;
@@ -72,4 +71,6 @@
       };
     };
   };
+
+  xdg.enable = true;
 }
