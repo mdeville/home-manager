@@ -7,14 +7,14 @@
   home.stateVersion = "26.11";
 
   home.packages = with pkgs; [
+    _1password-cli
     ast-grep
     comma
     dua
     duckdb
-    jaq
+    jq
     hyperfine
-    llvm
-    nh
+    ouch
     sd
     xh
   ];
@@ -48,12 +48,14 @@
       };
     };
     home-manager.enable = true;
+    lazygit.enable = true;
     nix-index.enable = true;
     nh.enable = true;
     opencode.enable = true;
     parallel.enable = true;
     starship.enable = true;
     ripgrep.enable = true;
+    tealdeer.enable = true;
     yazi.enable = true;
     zellij.enable = true;
     zoxide.enable = true;
