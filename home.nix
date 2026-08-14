@@ -50,6 +50,7 @@
     home-manager.enable = true;
     nix-index.enable = true;
     nh.enable = true;
+    opencode.enable = true;
     parallel.enable = true;
     starship.enable = true;
     ripgrep.enable = true;
