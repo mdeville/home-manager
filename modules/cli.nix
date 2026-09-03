@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, llm-agents, ... }:
 
 {
   home.packages = with pkgs; [
@@ -6,6 +6,7 @@
     ast-grep
     dua
     duckdb
+    llm-agents.dsh
     hyperfine
     jq
     ouch
@@ -16,11 +17,11 @@
   programs = {
     bat.enable = true;
     btop.enable = true;
+    fastfetch.enable = true;
     fd.enable = true;
     nix-index.enable = true;
     nix-index-database.comma.enable = true;
     nh.enable = true;
-    opencode.enable = true;
     parallel.enable = true;
     ripgrep.enable = true;
     tealdeer.enable = true;

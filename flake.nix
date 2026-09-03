@@ -16,6 +16,10 @@
       url = "github:numtide/treefmt-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    llm-agents = {
+      url = "github:numtide/llm-agents.nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -32,6 +36,9 @@
           pkgs:
           home-manager.lib.homeManagerConfiguration {
             inherit pkgs;
+            extraSpecialArgs = {
+              llm-agents = inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system};
+            };
             modules = [
               inputs.nix-index-database.homeModules.default
               ./home.nix
