@@ -46,6 +46,9 @@ in
     yq-go
   ];
 
+  # Binaries from `npm install -g` (prefix ~/.npm, see programs.npm).
+  home.sessionPath = [ "$HOME/.npm/bin" ];
+
   programs = {
     bat.enable = true;
     btop.enable = true;
@@ -54,9 +57,12 @@ in
     nix-index.enable = true;
     nix-index-database.comma.enable = true;
     nh.enable = true;
+    # Node.js + npm; the default npmrc puts `npm install -g` under ~/.npm.
+    npm.enable = true;
     parallel.enable = true;
     ripgrep.enable = true;
     tealdeer.enable = true;
+    uv.enable = true;
     yazi.enable = true;
     zellij.enable = true;
   };
